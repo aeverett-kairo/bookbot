@@ -16,3 +16,13 @@ def character_count(characters):
     return character_count
        
 
+def sort_characters_by_count(characters):
+   text_lowered = list(characters)
+   characters_name = 
+   for character in text_lowered:
+      if character not in characters_name:
+         characters_name["name"] = character
+         characters_name["num"] = 1
+      else:
+         characters_name["num"] += 1
+      return characters_name
