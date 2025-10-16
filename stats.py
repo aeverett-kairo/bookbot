@@ -17,12 +17,13 @@ def character_count(characters):
        
 
 def sort_characters_by_count(characters):
-   text_lowered = list(characters)
-   characters_name = 
-   for character in text_lowered:
-      if character not in characters_name:
-         characters_name["name"] = character
-         characters_name["num"] = 1
-      else:
-         characters_name["num"] += 1
-      return characters_name
+   char_list_dict = []
+   for letters in characters:
+      letter =  letters
+      number = characters[letters]
+      char_dict = {"char": letter, "num": number}
+      char_list_dict.append(char_dict)
+   return char_list_dict
+
+#def sort_on(char_list):
+#   return
