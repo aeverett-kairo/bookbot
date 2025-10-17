@@ -10,12 +10,16 @@ def get_book_text(path_to_file):
     return file_contents
 
 def main():
-    #book_text = get_book_text("/home/aarone/github.com/bookbot/books/frankenstein.txt")
+    if len(sys.argv) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+    path_to_books = sys.argv[1]
+    book_text = get_book_text(path_to_books)
     total_words = word_count(book_text)
     characters_count = character_count(book_text.lower())
     sorted_characters = sort_characters_by_count(characters_count)
     print("============ BOOKBOT ============")
-    print("Analyzing book found at books/frankenstein.txt...")
+    print(f"Analyzing book found at {path_to_books}")
     print("----------- Word Count ----------")
     print(f"Found {total_words} total words")
     print("--------- Character Count -------")
@@ -24,7 +28,6 @@ def main():
             continue
         print(f"{item['char']}: {item['num']}")
     print("============= END ===============")
-    print(sys.arg)
 
 
 if __name__ == "__main__":
