@@ -15,15 +15,15 @@ def character_count(characters):
         character_count[character] += 1
     return character_count
        
+def sort_on(items):
+    return items["num"]
 
 def sort_characters_by_count(characters):
-   char_list_dict = []
-   for letters in characters:
-      letter =  letters
-      number = characters[letters]
-      char_dict = {"char": letter, "num": number}
-      char_list_dict.append(char_dict)
-   return char_list_dict
-
-#def sort_on(char_list):
-#   return
+    char_list_dict = []
+    for letters in characters:
+        letter =  letters
+        number = characters[letters]
+        char_dict = {"char": letter, "num": number}
+        char_list_dict.append(char_dict)
+    char_list_dict.sort(reverse=True, key=sort_on)
+    return char_list_dict
