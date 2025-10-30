@@ -19,6 +19,7 @@ def sort_on(items):
     return items["num"]
 
 def sort_characters_by_count(characters):
+<<<<<<< HEAD
     char_list_dict = []
     for letters in characters:
         letter =  letters
@@ -27,3 +28,15 @@ def sort_characters_by_count(characters):
         char_list_dict.append(char_dict)
     char_list_dict.sort(reverse=True, key=sort_on)
     return char_list_dict
+=======
+   text_lowered = list(characters)
+   char_count = []
+   char_dict = {"char": char, "num": num}
+   for character in text_lowered:
+      if character not in characters_name:
+         characters_name["name"] = character
+         characters_name["num"] = 1
+      else:
+         characters_name["num"] += 1
+      return characters_name
+>>>>>>> 9fd2329 (complete)
